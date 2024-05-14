@@ -3,6 +3,10 @@ from . import views
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 urlpatterns = [
+    path('register/', views.RegisterView.as_view(), name='register'),
+    path('login/', views.LoginView.as_view(), name='login'),
+    path('logout/', views.LogoutView.as_view(), name='logout'),
+    
     path('notes/', views.NoteList.as_view(), name='notes'),
     path('notes/<int:pk>/', views.NoteDetail.as_view(), name='notes-detail'),
     path('notes/create/', views.NoteCreate.as_view(), name='notes-create'),
